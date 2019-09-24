@@ -1,3 +1,4 @@
+/*
 document.addEventListener('DOMContentLoaded', function(){
 
 
@@ -20,3 +21,5 @@ function upper(text){
 
 
 }  )
+
+*/

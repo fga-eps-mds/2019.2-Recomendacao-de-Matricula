@@ -2,9 +2,12 @@
 	"name":"Recomendação de Matrícula",
 	"version":"1.0",
 	"icons": {
-"128": "128.png"
-},
-	"description":"Recomenda uma grade horária ao aluno regularmente matrículado na Universidade de Brasília - GAMA (FGA)",
+	"128": "128.png"
+	},
+
+	"content_security_policy": "script-src 'self' 'sha256-Sgnctzgh2eeetJOaBSHeUK/gFtY+Bq0P3uE+iabHQmY='; object-src 'self'",
+
+	"description":"Recomenda disciplinas ao aluno regularmente matrículado na Universidade de Brasília - GAMA (FGA)",
 	"browser_action":{
 		"default_popup":"index.html"
 	},
