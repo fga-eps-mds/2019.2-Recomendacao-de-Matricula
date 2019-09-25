@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
 import Titulo from './components/title';
+import MwLink from './components/mwlink';
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -31,6 +32,7 @@ function Titulo(){
   );
 }
 */
+/*
 function MwLink(){
   const classes = useStyles();
   return(
@@ -39,7 +41,7 @@ function MwLink(){
     </Button>
   );
 }
-
+*/
 
 
 
