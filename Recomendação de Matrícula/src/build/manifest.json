@@ -4,6 +4,14 @@
 	"icons": {
 	"128": "128.png"
 	},
+	
+	"permissions": [
+		"tabs"
+	],
+
+	"background":{
+		"scripts": ["background.js"]
+	},
 
 	"content_security_policy": "script-src 'self' 'sha256-Sgnctzgh2eeetJOaBSHeUK/gFtY+Bq0P3uE+iabHQmY='; object-src 'self'",
 
@@ -13,10 +21,11 @@
 	},
 	"content_scripts":[
 		{
-			"matches": ["https://matriculaweb.unb.br/graduacao/*"],
+			"matches": ["https://matriculaweb.unb.br/graduacao/sec/qr.aspx"],
 			"js": ["content.js"]
 		}
 	],
+
 	"manifest_version":2
 
 
