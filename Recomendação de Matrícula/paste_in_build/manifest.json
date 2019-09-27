@@ -6,7 +6,8 @@
 	},
 	
 	"permissions": [
-		"tabs"
+		"tabs",
+		"storage"
 	],
 
 	"background":{
@@ -22,7 +23,7 @@
 	"content_scripts":[
 		{
 			"matches": ["https://matriculaweb.unb.br/graduacao/sec/qr.aspx"],
-			"js": ["content.js"]
+			"js": ["quadroresumo.js"]
 		}
 	],
 
