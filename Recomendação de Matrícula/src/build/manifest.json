@@ -1,32 +1,32 @@
 {
 	"name":"Recomendação de Matrícula",
 	"version":"1.0",
+	"description":"Recomenda disciplinas ao aluno regularmente matrículado na Universidade de Brasília - GAMA (FGA)",
+	"manifest_version": 2,
 	"icons": {
-	"128": "128.png"
+	"128": "./icons/logo128.png"
 	},
 	
 	"permissions": [
-		"tabs"
+		"tabs",
+		"storage"
 	],
 
 	"background":{
-		"scripts": ["background.js"]
+		"scripts": ["./background/background.js"]
 	},
 
-	"content_security_policy": "script-src 'self' 'sha256-Sgnctzgh2eeetJOaBSHeUK/gFtY+Bq0P3uE+iabHQmY='; object-src 'self'",
-
-	"description":"Recomenda disciplinas ao aluno regularmente matrículado na Universidade de Brasília - GAMA (FGA)",
 	"browser_action":{
 		"default_popup":"index.html"
 	},
+
 	"content_scripts":[
 		{
 			"matches": ["https://matriculaweb.unb.br/graduacao/sec/qr.aspx"],
-			"js": ["content.js"]
+			"js": ["./content/thirdparty/jquery-3.4.1.min.js","./content/quadroresumo.js"]
 		}
 	],
 
-	"manifest_version":2
-
+	"content_security_policy": "script-src 'self' 'sha256-Sgnctzgh2eeetJOaBSHeUK/gFtY+Bq0P3uE+iabHQmY='; object-src 'self'"
 
 }

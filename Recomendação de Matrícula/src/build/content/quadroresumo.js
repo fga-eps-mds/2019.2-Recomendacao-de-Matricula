@@ -7,9 +7,14 @@ var materiasNaoAprovadas = new Array();
 var scrappingDone
 var aux = ""
 
-chrome.runtime.sendMessage({leitura : "isScrapped"}, function(response){
-    console.log(response)
-    scrappingDone = response["valor"]
+chrome.storage.local.get(["status"], function(result){
+    if(result.status == null){
+        scrappingDone = false;
+    }
+    else{
+        scrappingDone = true;
+    }
+    console.log(scrappingDone)
     if(scrappingDone == false){
         for(var i = 0; i < 107; i++){ // for para passar por todas as materias do quadro resumo
             var x = quadroResumo[i].textContent[0]
@@ -38,16 +43,15 @@ chrome.runtime.sendMessage({leitura : "isScrapped"}, function(response){
             }
         }
     
-        chrome.runtime.sendMessage({
-            pedido : "ler",
+        chrome.storage.local.set({
+            status : 1,
             materiasA : materiasAprovadas,
             materiasR : materiasNaoAprovadas
-        }, function(response){
-            console.log(response)
+        }, function(result){
+            console.log("enviado");
         })
     }
 })
-
 
 /*
 console.log("Opção de curso: " + option)
