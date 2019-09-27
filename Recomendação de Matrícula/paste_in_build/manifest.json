@@ -2,7 +2,7 @@
 	"name":"Recomendação de Matrícula",
 	"version":"1.0",
 	"description":"Recomenda disciplinas ao aluno regularmente matrículado na Universidade de Brasília - GAMA (FGA)",
-	"manifest_version": 3,
+	"manifest_version": 2,
 	"icons": {
 	"128": "./icons/logo128.png"
 	},
@@ -23,7 +23,7 @@
 	"content_scripts":[
 		{
 			"matches": ["https://matriculaweb.unb.br/graduacao/sec/qr.aspx"],
-			"js": ["./content/quadroresumo.js"]
+			"js": ["./content/thirdparty/jquery-3.4.1.min.js","./content/quadroresumo.js"]
 		}
 	],
 
