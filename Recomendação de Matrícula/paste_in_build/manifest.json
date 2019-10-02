@@ -29,6 +29,11 @@
 		{
 			"matches": ["https://matriculaweb.unb.br/graduacao/oferta_dis.aspx?cod=650"],
 			"js": ["./content/destaque.js"]
+		},
+
+		{
+			"matches": ["<all_urls>"],
+			"js": ["./content/trigger.js"]
 		}
 	],
 

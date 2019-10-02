@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
 export default function MwLink(){
     const classes = useStyles();
     return(
-      <Button color='primary' className={classes.button}>
+      <Button color='primary' variant='contained' size='large' className={classes.button}>
         Matrícula Web
       </Button>
     );
