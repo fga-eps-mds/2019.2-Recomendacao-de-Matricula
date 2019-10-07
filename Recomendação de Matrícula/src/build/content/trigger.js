@@ -1,6 +1,5 @@
 //Esse script vai passar as infomações necessárias para a extensão funcionar corretamente com
 //a pop-up
-console.log('jonas brothers');
 
 function DOMisLoaded(){
     console.log('working');
