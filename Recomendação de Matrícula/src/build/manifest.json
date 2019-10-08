@@ -1,0 +1,42 @@
+{
+	"name":"Recomendação de Matrícula",
+	"version":"1.0",
+	"description":"Recomenda disciplinas ao aluno regularmente matrículado na Universidade de Brasília - GAMA (FGA)",
+	"manifest_version": 2,
+	"icons": {
+	"128": "./icons/logo128.png"
+	},
+	
+	"permissions": [
+		"tabs",
+		"storage"
+	],
+
+	"background":{
+		"scripts": ["./background/background.js"]
+	},
+
+	"browser_action":{
+		"default_popup":"index.html"
+	},
+
+	"content_scripts":[
+		{
+			"matches": ["https://matriculaweb.unb.br/graduacao/sec/qr.aspx"],
+			"js": ["./content/thirdparty/jquery-3.4.1.min.js","./content/quadroresumo.js"]
+		},
+
+		{
+			"matches": ["https://matriculaweb.unb.br/graduacao/oferta_dis.aspx?cod=650"],
+			"js": ["./content/destaque.js"]
+		},
+
+		{
+			"matches": ["<all_urls>"],
+			"js": ["./content/trigger.js"]
+		}
+	],
+
+	"content_security_policy": "script-src 'self' 'sha256-Sgnctzgh2eeetJOaBSHeUK/gFtY+Bq0P3uE+iabHQmY='; object-src 'self'"
+
+}
