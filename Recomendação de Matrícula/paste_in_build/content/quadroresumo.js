@@ -1,48 +1,32 @@
-var option = document.getElementById("lblOpcOpcao").innerText
-var student = document.getElementById("lblAluNome").innerText 
-var curse = document.getElementById("lblOpcDenominacao").innerText
-var quadroResumo = document.getElementsByClassName("col-md-1 col-sm-1 col-xs-1")
+//var option = document.getElementById("lblOpcOpcao").innerText
+//var student = document.getElementById("lblAluNome").innerText 
+//var curse = document.getElementById("lblOpcDenominacao").innerText
 var materiasAprovadas = new Array();
 var materiasNaoAprovadas = new Array();
-var scrappingDone
-var aux = ""
+var leituraFeita
 
 chrome.storage.local.get(["status"], function(result){
     if(result.status == null){
-        scrappingDone = false;
+        leituraFeita = false;
     }
     else{
-        scrappingDone = true;
+        leituraFeita = true;
     }
-    console.log(scrappingDone)
-    if(scrappingDone == false){
-        for(var i = 0; i < 107; i++){ // for para passar por todas as materias do quadro resumo
-            var x = quadroResumo[i].textContent[0]
-            if(x === "0" || x === "1" || x === "2" || x === "3" || x === "4" || x === "5" || x === "6" || x === "7" || x === "8" || "x" === "9"){ // checa se ha alguma materia
-                if(quadroResumo[i].style.color == "rgb(85, 85, 85)"){
-                    if(quadroResumo[i].textContent[12] == "*"){ // se for uma materia em andamento
-                        for(var j=23; j<29; j++){
-                            aux += quadroResumo[i].textContent[j]
-                        }
-                        materiasNaoAprovadas[materiasNaoAprovadas.length] = aux
-                        aux=""
-                    } else { // se for uma materia aprovada
-                        for(var j=23; j<29; j++){
-                            aux += quadroResumo[i].textContent[j]
-                        }
-                        materiasAprovadas[materiasAprovadas.length] = aux
-                        aux=""
-                    }
-                } else { // se for uma materia sem aprovação
-                    for(var j = 21; j < 27; j++){
-                        aux += quadroResumo[i].textContent[j]
-                    }
-                    materiasNaoAprovadas[materiasNaoAprovadas.length] = aux
-                    aux = ""
+    console.log(leituraFeita)
+    if(leituraFeita == false){
+        let materias = $(".col-md-1")
+        for(let mat of materias){
+            if(mat.style.color == "rgb(85, 85, 85)"){
+                materiasAprovadas.push(mat.children[1].innerText)
+                //console.log(mat.children[1].innerText)
+            }
+            else if(mat.style.color == "rgb(244, 67, 54)"){
+                if(mat.children[1].innerText != ""){
+                    materiasNaoAprovadas.push(mat.children[1].innerText)
+                    //console.log(mat.children[1].innerText)
                 }
             }
         }
-    
         chrome.storage.local.set({
             status : 1,
             materiasA : materiasAprovadas,
