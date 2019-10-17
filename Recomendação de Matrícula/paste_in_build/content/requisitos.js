@@ -1,13 +1,8 @@
-$("body").append("<div id = \"mds\"></div>");
+option = ["193674", "119466"]
+var i = 0
 
-var option = "193674"
-gettingInfo(option);
-
-function gettingInfo(option){
-    url = "https://matriculaweb.unb.br/graduacao/disciplina.aspx?cod=" + option
-    $("#mds").load(url + " #datatable tbody tr", function(){
-        console.log("ok")
-    })
+for(a in option){
+    $.get( "https://matriculaweb.unb.br/graduacao/disciplina.aspx?cod=" + a, function( data ) {
+        console.log(data);
+    });
 }
-
-//console.log(celula)
