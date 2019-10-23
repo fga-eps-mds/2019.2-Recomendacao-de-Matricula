@@ -105747,7 +105747,7 @@ chrome.storage.local.get(["materiasR"], function(result){
                 requisitos.children('td').children().each((i, el) => {
                     if(el.tagName == 'a'){
                         let a = $(el).children('strong').text().trim()
-                        console.log(a)
+                        //console.log(a)
                     }
                     else if(el.tagName == 'strong'){
                         let b = $(el).text().trim()
