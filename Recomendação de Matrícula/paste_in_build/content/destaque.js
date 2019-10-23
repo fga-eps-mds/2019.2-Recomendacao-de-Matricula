@@ -2,10 +2,19 @@ let elements = document.querySelectorAll("tr"); //Seleciona as materias da tabel
 let greenHex = "#ceffca" //Cor de destaque de materias ja cursadas
 let yellowHex = "#ffff00" //Cor de destaque de materias nao cursadas
 
-chrome.storage.local.get(["status", "materiasA", "materiasR"], function(result){
+chrome.storage.local.get(["status", "materias"], function(result){
     if (result.status != null) {
-        let materiasCursadas = Array.from(result.materiasA) //Array de materias ja cursadas
-        let materiasNaoCursadas = Array.from(result.materiasR) //Array de materias nao cursadas
+        let materiasCursadas = [] //Array de materias ja cursadas
+        let materiasNaoCursadas = [] //Array de materias nao cursadas
+
+        for (dados of result.materias) {
+            if (dados.aprovado) {
+                materiasCursadas.push(dados.codigo);
+            }
+            else {
+                materiasNaoCursadas.push(dados.codigo);
+            }
+        }
 
         console.log(materiasCursadas)
 
