@@ -23,14 +23,22 @@ chrome.storage.local.get(["status"], function(result){
                 //materiasAprovadas.push(mat.children[1].innerText)
                 codigo = mat.children[1].innerText;
                 aprovado = true;
-                index.push({codigo, aprovado});
+                index.push({
+                    codigo, 
+                    aprovado,
+                    requisitos : []
+                });
             }
             else if(mat.style.color == "rgb(244, 67, 54)"){
                 if(mat.children[1].innerText != ""){
                     //materiasNaoAprovadas.push(mat.children[1].innerText)
                     codigo = mat.children[1].innerText;
                     aprovado = false;
-                    index.push({codigo, aprovado});
+                    index.push({
+                        codigo, 
+                        aprovado,
+                        requisitos : []
+                    });
                 }
             }
         }
@@ -43,12 +51,13 @@ chrome.storage.local.get(["status"], function(result){
         })
     }
 })
-/*
-var teste 
+
+/*var teste 
 chrome.storage.local.get(["materias"], function(result){
     teste = result.materias;
-    teste[0].codigo = "123"
-    chrome.storage.local.set({
+    teste[0].requisitos.push("TED");
+    console.log(teste);
+    /*chrome.storage.local.set({
         status : 1,
         materias : teste
     }, function(result){
