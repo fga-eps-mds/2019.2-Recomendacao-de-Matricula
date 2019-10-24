@@ -1,8 +1,15 @@
 const request = require('request');
 const cheerio = require('cheerio');
-let pre = ""             
-chrome.storage.local.get(["materiasR"], function(result){  
-    for(codigo of result.materiasR){                                           //193674
+let pre = ""
+let materiasNaoCursadas = []
+let teste = []
+chrome.storage.local.get(["materias"], function(result){
+    for(materia of result.materias){
+        if(!materia.aprovado){
+            materiasNaoCursadas.push(materia.codigo);
+        }
+    }  
+    for(codigo of materiasNaoCursadas){                                           //193674
         request('https://matriculaweb.unb.br/graduacao/disciplina.aspx?cod='.concat(codigo), (error, response, html) => {
             if(!error && response.statusCode == 200){
                 let $ = cheerio.load(html)
@@ -12,14 +19,17 @@ chrome.storage.local.get(["materiasR"], function(result){
                 requisitos.children('td').children().each((i, el) => {
                     if(el.tagName == 'a'){
                         let a = $(el).children('strong').text().trim()
-                        console.log(a)
+                        teste.push(a);
                     }
                     else if(el.tagName == 'strong'){
                         let b = $(el).text().trim()
                         //console.log(b)
                     }
+                    
                 })
             }
         })
     }
 })
+
+console.log(teste)
