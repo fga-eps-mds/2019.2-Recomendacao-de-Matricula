@@ -44,7 +44,7 @@ if success==0:
     #facilitando assim o desenvolvimento tendo em vista que o teste do back-end depende do front-end e vice e versa
 
     print('\n\n\033[32mCopiando os arquivos de script da pasta "/scripts para a pasta "/extensao"\n\n\033[0;0m')
-    copy_all('paste_in_build', 'extensao')
+    copy_all('scripts', 'extensao')
 
     print('\033[32m\033[1m SUCESSO! \033[0;0m\n \n')
     print("""Agora para poder executar a extensão, abra o endereço:
