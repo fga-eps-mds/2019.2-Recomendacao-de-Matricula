@@ -34,19 +34,19 @@ success = os.system('cd src; npm run build')
 if success==0:
     print('\n\n\033[32mCopiando os arquivos gerados para a pasta "/extensao" \n\n\033[0;0m')
     #Remover a pasta antiga para poder inserir arquivos novos e manter a pasta atualizada sem arquivo inutilizado
-    if os.path.exists('build'):
-        shutil.rmtree('build')
+    if os.path.exists('extensao):
+        shutil.rmtree('extensao')
     #Copiar os arquivos para a pasta nova
-    copy_all('src/build','build')            
+    copy_all('src/build','extensao')            
     print('Arquivos copiados!')
     #Então, copiar os arquivos da pasta '/scripts' para a pasta '/extensao'
     #Fazendo assim com que todos os arquivos necessários para o chrome estejam na mesma pasta
     #facilitando assim o desenvolvimento tendo em vista que o teste do back-end depende do front-end e vice e versa
 
     print('\n\n\033[32mCopiando os arquivos de script da pasta "/scripts para a pasta "/extensao"\n\n\033[0;0m')
-    copy_all('paste_in_build', 'build')
+    copy_all('paste_in_build', 'extensao')
 
     print('\033[32m\033[1m SUCESSO! \033[0;0m\n \n')
     print("""Agora para poder executar a extensão, abra o endereço:
     \n\033[32m\033[1m chrome://extensions \033[0;0m\n
-    Ative o modo de desenvolvedor e adicione a pasta \033[32m\033[1m build \033[0;0m como extensão descompactada.\n""")
+    Ative o modo de desenvolvedor e adicione a pasta \033[32m\033[1m \extensao \033[0;0m como extensão descompactada.\n""")
