@@ -34,7 +34,7 @@ success = os.system('cd src; npm run build')
 if success==0:
     print('\n\n\033[32mCopiando os arquivos gerados para a pasta "/extensao" \n\n\033[0;0m')
     #Remover a pasta antiga para poder inserir arquivos novos e manter a pasta atualizada sem arquivo inutilizado
-    if os.path.exists('extensao):
+    if os.path.exists('extensao'):
         shutil.rmtree('extensao')
     #Copiar os arquivos para a pasta nova
     copy_all('src/build','extensao')            
