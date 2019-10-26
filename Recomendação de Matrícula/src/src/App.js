@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Conteudo from './components/conteudo';
 import Titulo from './components/title'
-import '/build/background/background.js'; 
+/*import '/build/background/background.js';*/ 
 
 function App() {
   
