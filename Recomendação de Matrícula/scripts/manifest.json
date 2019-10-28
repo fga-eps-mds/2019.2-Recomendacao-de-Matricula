@@ -27,8 +27,18 @@
 		},
 
 		{
+			"matches": ["https://matriculaweb.unb.br/graduacao/*"],
+			"js": ["./content/thirdparty/jquery-3.4.1.min.js","./content/requisitos.js"]
+		},
+
+		{
 			"matches": ["https://matriculaweb.unb.br/graduacao/oferta_dis.aspx?cod=650"],
 			"js": ["./content/destaque.js"]
+		},
+
+		{
+			"matches": ["https://matriculaweb.unb.br/graduacao/sec/he.aspx"],
+			"js": ["./content/historicoescolar.js"]
 		},
 
 		{
