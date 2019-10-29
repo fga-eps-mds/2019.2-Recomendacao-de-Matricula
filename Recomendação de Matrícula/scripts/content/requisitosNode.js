@@ -1,7 +1,7 @@
 const request = require('request');
 const cheerio = require('cheerio');
 let materiasNaoCursadas = []
-
+let requisitosMateriasNaoCursadas = []
 chrome.storage.local.get(["materias"], function(result){
     //console.log(result.materias);
     let materias = result.materias;
@@ -51,7 +51,23 @@ chrome.storage.local.get(["materias"], function(result){
                     }
                 }
                 //console.log(vetorFinal)
+                requisitosMateriasNaoCursadas.push(vetorFinal);
+            }
+            //console.log(requisitosMateriasNaoCursadas.length)
+            if(requisitosMateriasNaoCursadas.length == materiasNaoCursadas.length){
+                completarRequisitos(requisitosMateriasNaoCursadas, materias, materiasNaoCursadas)
             }
         })
     }
 })
+
+function completarRequisitos(requisitos, materias, materiasNaoCursadas){
+    for(i = 0, j = 0; i < materias.length && j != materiasNaoCursadas.length; i++){
+        if(materias[i].codigo == materiasNaoCursadas[j][1]){
+            materias[i].requisitos = requisitos[j]
+            j++
+            //console.log(materias[i])
+        }
+    }
+    //console.log(materias)
+}
