@@ -69789,15 +69789,19 @@ chrome.storage.local.get(["materias"], function(result){
     }
 })
 
-function completarRequisitos(requisitos, materias, materiasNaoCursadas){
-    for(i = 0, j = 0; i < materias.length && j != materiasNaoCursadas.length; i++){
-        if(materias[i].codigo == materiasNaoCursadas[j][1]){
-            materias[i].requisitos = requisitos[j]
+function completarRequisitos(requisitos, index, materiasNaoCursadas){
+    for(i = 0, j = 0; i < index.length && j != materiasNaoCursadas.length; i++){
+        if(index[i].codigo == materiasNaoCursadas[j][1]){
+            index[i].requisitos = requisitos[j]
             j++
-            //console.log(materias[i])
+            //console.log(index[i])
         }
     }
-    //console.log(materias)
+    chrome.storage.local.set({
+        materias : index
+    }, function(result){
+        console.log("requisitos salvos");
+    })
 }
 
 },{"cheerio":57,"request":407}],462:[function(require,module,exports){
