@@ -1,6 +1,6 @@
 # Grupo 15 - Projeto de recomendação de matrícula nas disciplinas da UNB
 <h2> Recomendações de Matricula para disciplinas na UnB
-<p>Projeto destinado à aplicação, que é uma extensão para Google Chrome, que realiza um auxilio aos estudantes durante o periodo de matricula em disciplina, através da sugestão de disciplinas para matrícula.</p>
+<p>projeto destinado á auxiliar os estudantes durante o periodo de matricula em disciplina , através da sugestão de disciplinas para matrícula . O projeto é uma extensão que  funciona a partir do navegador google chorome . ele depende paara funcionar que o usuario além de estar utilizando este navegador , esteja logado na pagina do matricula web da unb. e ja tenha importado no google chorome o compactado referente a esta extensão. </p>
 
 <h2> Instalação: </h2>
 <p>É necessário ter o Node.JS instalado para poder compilar os arquivos gerados pelo ReactJS; Basta seguir o guia do link abaixo para instalá-lo </p>
