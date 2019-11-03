@@ -1,6 +1,6 @@
 # Grupo 15 - Projeto de recomendação de matrícula nas disciplinas da UNB
-<h2> Recomendações de Matricula para disciplinas na UnB
-<p>projeto destinado á auxiliar os estudantes durante o periodo de matricula em disciplina , através da sugestão de disciplinas para matrícula . O projeto é uma extensão que  funciona a partir do navegador google chorome . ele depende paara funcionar que o usuario além de estar utilizando este navegador , esteja logado na pagina do matricula web da unb. e ja tenha importado no google chorome o compactado referente a esta extensão. </p>
+<h2> Recomendações de Matrícula para disciplinas na UnB </h2>
+<p>Projeto destinado à aplicação, que é uma extensão para Google Chrome, que realiza um auxilio aos estudantes durante o periodo de matricula em disciplina, através da sugestão de disciplinas para matrícula.</p>
 
 <h2> Instalação: </h2>
 <p>É necessário ter o Node.JS instalado para poder compilar os arquivos gerados pelo ReactJS; Basta seguir o guia do link abaixo para instalá-lo </p>
@@ -46,3 +46,21 @@ Para executar a extensão é necessário que se execute o  que gera os arquivos 
 
 + Uma vez que a extensão foi adicionada no Chrome, ela não precisa ser adicionada novamente
 + Depois que executado o script de compilar a extensão, basta clicar no ícone de seta circular localizado no card da extensão na própria página "chrome://extensions"
+
+<h2>Sobre funcionalidade:</h2>
+
+<p>A extensão para Google Chrome tem como objetivo facilitar a escolha de disciplinas para os alunos matrículados na Universidade de Brasília (UNB).
+    
+A UNB tem o [Matrícula Web] como plataforma de matrículas, logo a extensão tem que trabalhar em conjunto com essa plataforma. Esse serviço de gestão de matrículas do Matrícula Web não disponibiliza nenhuma API para requisição de dados, logo, toda a programação da captura de dados para as recomendações de matrículas estão sendo feitas aqui nesse projeto.
+
+[Matrícula Web]:www.matriculaweb.unb.br
+
+<h4>Das funcionalidades:<h4>
+<h5>Disponíveis e úteis para o usuário, podemos citar:</h5>
+
++ Highlight de matrículas disponíveis para matrícula na página de oferta de disciplinas
++ Geração de grades horárias com mátérias (Em progresso)
+
+<h5>Internas, com o objetivo de integrá-las para que as funcionalidades para o usuário existam</h5>
+
++ In a nutshell, a extensão verifica se o usuário está logado no Matrícula Web, recolhe dados do usuário (como disciplinas já concluídas) na página de quadro resumo por meio de um Crawler, verifica situação de pré-requisitos e co-requisitos das matérias para poder classificá-las, organiza os dados e integra as funcionalidades usando o ReactJS para o usuário poder ter uma rápida identificação do interesse dele.
