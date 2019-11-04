@@ -69728,8 +69728,8 @@ WError.prototype.cause = function we_cause(c)
 },{"assert-plus":50,"core-util-is":70,"extsprintf":104,"util":665}],461:[function(require,module,exports){
 const request = require('request');
 const cheerio = require('cheerio');
+let materiasCursadas = []
 let materiasNaoCursadas = []
-let requisitosMateriasNaoCursadas = []
 chrome.storage.local.get(["materias"], function(result){
     //console.log(result.materias);
     let materias = result.materias;
@@ -69737,12 +69737,16 @@ chrome.storage.local.get(["materias"], function(result){
         if(!result.materias[i].aprovado){
             materiasNaoCursadas.push([i, result.materias[i].codigo]);
         }
+        else{
+            materiasCursadas.push(result.materias[i].codigo);
+        }
     }
 
     for(i = 0; i < materiasNaoCursadas.length; i++){
         request('https://matriculaweb.unb.br/graduacao/disciplina.aspx?cod='.concat(materiasNaoCursadas[i][1]), (error, response, html) => {
             if(!error && response.statusCode == 200){
                 let $ = cheerio.load(html) 
+                let codigoAtual = $('#datatable tbody tr').eq(1).children('td').text().trim()
                 let requisitos = $('#datatable tbody tr').eq(5)
                 let vetorGeral = []
                 requisitos.children('td').children().each((iterador, el) => {
@@ -69777,31 +69781,49 @@ chrome.storage.local.get(["materias"], function(result){
                         vetorFinal.push(vetorTemp);
                         vetorTemp = []
                     }
+                    else if(vetorGeral[j] == " "){
+                        vetorFinal.push(vetorTemp);
+                    }
                 }
-                //console.log(vetorFinal)
-                requisitosMateriasNaoCursadas.push(vetorFinal);
-            }
-            //console.log(requisitosMateriasNaoCursadas.length)
-            if(requisitosMateriasNaoCursadas.length == materiasNaoCursadas.length){
-                completarRequisitos(requisitosMateriasNaoCursadas, materias, materiasNaoCursadas)
+                for(j = 0; j < materias.length; j++){
+                    if(materias[j].codigo == codigoAtual){
+                        materias[j].requisitos = vetorFinal;
+                    }
+                }
+                avaliarSePodeSerFeita(materias);
+                chrome.storage.local.set({
+                    status : 2,
+                    materias : materias
+                }, function(result){
+                    console.log("Requisitos Salvos");
+                })
             }
         })
     }
+    //console.log(materias)
 })
 
-function completarRequisitos(requisitos, index, materiasNaoCursadas){
-    for(i = 0, j = 0; i < index.length && j != materiasNaoCursadas.length; i++){
-        if(index[i].codigo == materiasNaoCursadas[j][1]){
-            index[i].requisitos = requisitos[j]
-            j++
-            //console.log(index[i])
+function avaliarSePodeSerFeita(index){
+    for(i = 0; i < index.length; i++){
+        if(index[i].aprovado || index[i].requisitos.length == 0){
+            index[i].podeSerFeita = true;
+        }
+        else if(!index[i].aprovado){
+            for(j = 0; j < index[i].requisitos.length; j++){
+                let count = 0;
+                for(k = 0; k < index[i].requisitos[j].length; k++){
+                    if(materiasCursadas.includes(index[i].requisitos[j][k])){
+                        count++;
+                    }
+                }
+                if(count == index[i].requisitos[j].length){
+                    index[i].podeSerFeita = true;
+                    break;
+                }
+                index[i].podeSerFeita = false;
+            }
         }
     }
-    chrome.storage.local.set({
-        materias : index
-    }, function(result){
-        console.log("requisitos salvos");
-    })
 }
 
 },{"cheerio":57,"request":407}],462:[function(require,module,exports){
