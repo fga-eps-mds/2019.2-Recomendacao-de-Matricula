@@ -69,3 +69,9 @@ Para salvar novos elementos na persistência, usa-se o método set:
             console.log("materias salvas");
         })
 ```
+
+Dependendo da implementação, pode ser interessante limpar a memória e re-fazer a leitura dos dados. Para limpar a memória usa-se o método clear:
+
+```js
+    chrome.storage.local.clear();
+```
