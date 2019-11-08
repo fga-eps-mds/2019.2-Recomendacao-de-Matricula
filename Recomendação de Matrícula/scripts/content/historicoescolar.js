@@ -2,11 +2,14 @@ var elements = document.querySelectorAll("tr");
 let indexCodigoMateria = 0
 let indexNomeMateria = 1
 let indexMencao = 3
+let indexCreditos = [4, 5, 6, 7]
 
 var materias = []
 var codigo, nomeMateria, aprovado, reprovacoes, mencao;
+var semestres = []
+var periodo = null, quantidadeAprovacoes, creditos;
 
-chrome.storage.local.get(["materiasHistorico"], function(result){
+chrome.storage.local.get(["materiasHistorico", "semestresCursados"], function(result){
     if(result.materiasHistorico == null){
         leituraFeita = false;
     }
@@ -17,6 +20,22 @@ chrome.storage.local.get(["materiasHistorico"], function(result){
 
     if(leituraFeita == false){
         for (element of elements) {
+
+            //Creditos por periodo
+            if (element.textContent[0] == 'P') {
+                if (periodo != null) {
+                    semestres.push({
+                        periodo,
+                        quantidadeAprovacoes,
+                        creditos
+                    });
+                }
+                periodo = element.children[1].innerText;
+                quantidadeAprovacoes = 0;
+                creditos = 0;
+            }
+
+            //Materias cursadas
             if (!isNaN(parseInt(element.textContent[0]))) { //Seleciona apenas as linhas da tabela de materias
                 codigo = element.children[indexCodigoMateria].innerText;
                 nomeMateria = element.children[indexNomeMateria].innerText;
@@ -49,21 +68,42 @@ chrome.storage.local.get(["materiasHistorico"], function(result){
                         reprovacoes,
                         mencoes : [mencao]
                     });
-                }   
+                }  
+                
+                if (aprovado) {
+                    quantidadeAprovacoes++;
+                    for (index of indexCreditos) { //Percorre todas as casas da tabela onde pode haver valor de creditos
+                        let valorCreditos = parseInt(element.children[index].innerText);
+                        if (!isNaN(valorCreditos)) {
+                            creditos += valorCreditos;
+                        }
+                    }
+                }
             }
         }
+        semestres.push({
+            periodo,
+            quantidadeAprovacoes,
+            creditos
+        });
+
         chrome.storage.local.set({
-            materiasHistorico : materias
+            materiasHistorico : materias,
+            semestresCursados : semestres
         }, function(result){
-            console.log(materias.length, "materias armazenadas");
+            console.log("materias armazenadas", materias.length);
+            console.log("semestres:", semestres);
         })
     }
+
+    // for (materia of materias) {
+    //     if (!materia.aprovado && materia.reprovacoes >= 2) {
+    //         console.log("RISCO DE DESLIGAMENTO");
+    //         console.log(materia.nomeMateria);
+    //     }
+    // }
+    
+    // if (semestres[semestres.length - 1].quantidadeAprovacoes < 4) {
+    //      console.log("Cuidado, você precisa ser aprovado em ",4 - semestres[semestres.length - 1].quantidadeAprovacoes," matérias nesse semestre para cumprir o minimo de aprovacoes");
+    // }    
 })
-
-for (materia of materias) {
-    if (!materia.aprovado && materia.reprovacoes >= 2) {
-        console.log("RISCO DE DESLIGAMENTO")
-        console.log(materia.nomeMateria)
-    }
-}
-
