@@ -1,20 +1,26 @@
 /*global chrome*/
 import React, { useState } from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box'
 import Fab from '@material-ui/core/Fab';
-import CheckIcon from '@material-ui/icons/Check';
-import clsx from 'clsx';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { green } from '@material-ui/core/colors';
+import Typography from '@material-ui/core/Typography';
+
+import clsx from 'clsx';
+
+import CheckIcon from '@material-ui/icons/Check';
 //import Button from '@material-ui/core/Button';
 import DnsIcon from '@material-ui/icons/Dns';
 
+
+
 const useStyles = makeStyles(theme => ({
     paper: {
-      height: 140,
-      width: 250,
+      padding: theme.spacing(3),
     },
     buttonSuccess: {
       backgroundColor: green[500],
@@ -57,32 +63,77 @@ export default function StepByStep(){
 
 
     return(<Grid container justify='center'>  
-    <Grid container alignItems='center' direction='column' justify='center'>
+    <Grid container alignItems='stretch' direction='column' justify='center'>
 
-      <Grid item>
-           <Box textAlign='center' height={300}>
-             <h3>
-               Acesse seu QUADRO RESUMO e em seguida entre na página de oferta de disciplinas para as disciplinas serem destacadas
-             </h3>
-             <div>
-               <Fab
-                 aria-label="save"
-                 color="primary"
-                 className={buttonClassname}
-                 onClick={handleButtonClick}
-               >
-                 {success ? <CheckIcon /> : <DnsIcon />}
-               </Fab>
-             {loading && <CircularProgress size={68} className={classes.fabProgress} />}
+      
+           <Box textAlign='center' paddingTop={2} height={370}> 
+            <div>
+            <Grid container spacing={2}>
+              <Paper square className={classes.paper}>
+                <Grid container item justify='center' alignItems="stretch" direction="row">
+                    <Grid item> 
+                      <Fab
+                        aria-label="save"
+                        color="primary"
+                        className={buttonClassname}
+                        onClick={handleButtonClick}
+                      >
+                      {success ? <CheckIcon /> : <DnsIcon />}
+                      </Fab>
+                      
+                    </Grid>
+                    <Grid item>  
+                      <Typography component="p">
+                        Faça log-in no Matrícula Web
+                      </Typography>    
+                    </Grid>
+                </Grid>
+              </Paper>
+             
+              <Paper square className={classes.paper}>
+                <Grid container item justify='center' alignItems="stretch" direction="row">
+                    <Grid item> 
+                      <Fab
+                        aria-label="save"
+                        color="primary"
+                        className={buttonClassname}
+                        onClick={handleButtonClick}
+                      >
+                      {success ? <CheckIcon /> : <DnsIcon />}
+                      </Fab>
+                      
+                    </Grid>
+                    <Grid item>  
+                      <Typography component="p">
+                        Acesse a página do seu QUADRO RESUMO
+                      </Typography>    
+                    </Grid>
+                </Grid>
+              </Paper>
+             
+              <Paper square className={classes.paper}>
+                <Grid container item justify='center' alignItems="stretch" direction="row">
+                    <Grid item> 
+                      <Fab
+                        aria-label="save"
+                        color="primary"
+                        className={buttonClassname}
+                        onClick={handleButtonClick}
+                      >
+                      {success ? <CheckIcon /> : <DnsIcon />}
+                      </Fab>
+                    </Grid>
+
+                    <Grid item>  
+                      <Typography component="p">
+                        Acesse a página de oferta de disciplinas
+                      </Typography>    
+                    </Grid>
+                </Grid>
+              </Paper>
+             </Grid>
              </div>
           </Box>  
-       </Grid>
-
-       <Grid item>
-         <h2>Legenda:</h2>
-
-       </Grid>
-
-     </Grid>
+      </Grid>
    </Grid>);
 }
