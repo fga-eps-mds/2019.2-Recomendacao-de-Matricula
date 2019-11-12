@@ -95,15 +95,5 @@ chrome.storage.local.get(["materiasHistorico", "semestresCursados"], function(re
             console.log("semestres:", semestres);
         })
     }
-
-    // for (materia of materias) {
-    //     if (!materia.aprovado && materia.reprovacoes >= 2) {
-    //         console.log("RISCO DE DESLIGAMENTO");
-    //         console.log(materia.nomeMateria);
-    //     }
-    // }
-    
-    // if (semestres[semestres.length - 1].quantidadeAprovacoes < 4) {
-    //      console.log("Cuidado, você precisa ser aprovado em ",4 - semestres[semestres.length - 1].quantidadeAprovacoes," matérias nesse semestre para cumprir o minimo de aprovacoes");
-    // }    
+ 
 })
