@@ -47,7 +47,7 @@ chrome.storage.local.get(["status"], function(result){
             status : 1,
             materias : index
         }, function(result){
-            console.log("enviado");
+            console.log("materias salvas");
         })
     }
 })

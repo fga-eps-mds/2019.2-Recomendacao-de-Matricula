@@ -37,6 +37,11 @@
 		},
 
 		{
+			"matches": ["https://matriculaweb.unb.br/graduacao/sec/he.aspx"],
+			"js": ["./content/historicoescolar.js"]
+		},
+
+		{
 			"matches": ["<all_urls>"],
 			"js": ["./content/trigger.js"]
 		}
