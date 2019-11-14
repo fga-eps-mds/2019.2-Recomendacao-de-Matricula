@@ -37,6 +37,11 @@
 		},
 
 		{
+			"matches": ["https://matriculaweb.unb.br/graduacao/oferta_dis.aspx?cod=*"],
+			"js": ["./content/destaque.js"]
+		},
+
+		{
 			"matches": ["https://matriculaweb.unb.br/graduacao/sec/he.aspx"],
 			"js": ["./content/historicoescolar.js"]
 		},
