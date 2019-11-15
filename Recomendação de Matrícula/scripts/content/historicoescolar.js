@@ -88,7 +88,7 @@ chrome.storage.local.get(["materiasHistorico", "semestresCursados", "status"], f
         });
 
         result.status.historico = true;
-        
+
         chrome.storage.local.set({
             materiasHistorico : materias,
             semestresCursados : semestres,

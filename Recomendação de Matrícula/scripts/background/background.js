@@ -7,8 +7,11 @@
 chrome.runtime.onMessage.addListener(
     function(request, sender, response){
         if(request["requisitos"] == true){
-            response({resposta : "recebido"});
+            response({resposta : "requisitos lidos"});
             //console.log(response)
+        }
+        if(request["quadroResumo"] == true){
+            response({resposta : "Quadro resumo lido"});
         }
     }
 )

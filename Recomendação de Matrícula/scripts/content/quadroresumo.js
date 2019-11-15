@@ -53,6 +53,9 @@ chrome.storage.local.get(["status"], function(result){
             materias : index
         }, function(result){
             console.log("materias salvas");
+            chrome.runtime.sendMessage({quadroResumo : true}, function(response){
+                console.log(response.resposta);
+            })
         })
     }
 })
