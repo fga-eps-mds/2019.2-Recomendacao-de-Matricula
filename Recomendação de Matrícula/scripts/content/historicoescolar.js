@@ -9,7 +9,7 @@ var codigo, nomeMateria, aprovado, reprovacoes, mencao;
 var semestres = []
 var periodo = null, quantidadeAprovacoes, creditos;
 
-chrome.storage.local.get(["materiasHistorico", "semestresCursados"], function(result){
+chrome.storage.local.get(["materiasHistorico", "semestresCursados", "status"], function(result){
     if(result.materiasHistorico == null){
         leituraFeita = false;
     }
@@ -87,9 +87,12 @@ chrome.storage.local.get(["materiasHistorico", "semestresCursados"], function(re
             creditos
         });
 
+        result.status.historico = true;
+        
         chrome.storage.local.set({
             materiasHistorico : materias,
-            semestresCursados : semestres
+            semestresCursados : semestres,
+            status : result.status
         }, function(result){
             console.log("materias armazenadas", materias.length);
             console.log("semestres:", semestres);

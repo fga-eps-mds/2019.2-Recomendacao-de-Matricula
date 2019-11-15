@@ -43,8 +43,13 @@ chrome.storage.local.get(["status"], function(result){
             }
         }
         //console.log(index);
+        let leitura = {
+            quadroResumo : true,
+            requisitos : false,
+            historico : false
+        }
         chrome.storage.local.set({
-            status : 1,
+            status : leitura,
             materias : index
         }, function(result){
             console.log("materias salvas");

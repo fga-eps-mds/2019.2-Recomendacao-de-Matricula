@@ -5,7 +5,7 @@ let yellowHex = "#ffff00" //Cor de destaque de materias nao cursadas
 let redHex = "#ff4000" //Cor de destaque para materias em risco de desligamento
 
 chrome.storage.local.get(["status", "materias", "materiasHistorico"], function(result){
-    if (result.status != null) {
+    if (result.status) {
         let materiasCursadas = []; //Materias já cursadas as quais o aluno já está aprovado ou fazendo
         let materiasRequisitosAtendidos = []; //Materias não cursadas que atendem aos pré-requisitos
         let materiasRequisitosNaoAtendidos = []; //Materias não cursadas que não atendem os pré-requisitos
@@ -22,7 +22,7 @@ chrome.storage.local.get(["status", "materias", "materiasHistorico"], function(r
                 materiasRequisitosNaoAtendidos.push(result.materias[i].codigo)
             }
         }
-
+        
         for (materia of result.materiasHistorico) {
             if (!materia.aprovado && materia.reprovacoes >= 2) {
                 materiasEmCondicao.push(materia.codigo);

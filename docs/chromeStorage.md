@@ -7,7 +7,11 @@ A API chrome storage salva os dados de forma semelhante ao formato <strong>JSON<
 A pesistência do projeto fica salva da seguinte forma atualmente:
 
 ```js
-status : 0
+status : {
+    quadroResumo : true,
+    requisitos : false,
+    historico : false
+}
 materias : [{
     codigo : "codigo da matéria",
     aprovado : true,
@@ -19,8 +23,7 @@ materias : [{
 <strong>status</strong> indica qual das operações de leitura e salvamento de dados foi feita:
 
 - null = nenhuma leitura realizada
-- 1 = leitura do quadro resumo realizada
-- 2 = leitura dos pré-requisitos
+- Assim que o <strong>quadro resumo</strong> é lido, os valores iniciais são configurados como mostrados acima.
 
 <strong>materias</strong> é um vetor com as propriedades descritas acima:
 
