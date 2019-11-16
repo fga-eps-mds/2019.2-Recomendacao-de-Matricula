@@ -29,17 +29,17 @@ export default function NotMatriculaWeb(){
  
  let bgpage = chrome.extension.getBackgroundPage();   
  
-
- setInterval(function(){
-  setIsMW(bgpage.isMatriculaWeb);
- },1000);
- //setIsMW(bgpage.isMatriculaWeb);
- console.log("This is Matricula Web? : " + isMW);
+  //Função que checa constantemente, quando este componente estiver sendo exibido, se o usuário está no MW
+  setInterval(function(){
+    setIsMW(bgpage.isMatriculaWeb);
+  },1000);
+  console.log("This is Matricula Web? : " + isMW);
  
+  //Caso o usuário já esteja no Matricula Web
   if(isMW == true){
     return <Redirect from='*' to='/StepByStep' />
   }
-  //Caso o usuario não esteja no matricula web
+  //Caso o usuario não esteja no Matricula Web
   return(
     
     <Grid container justify='center'>  
