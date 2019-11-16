@@ -39,6 +39,11 @@ export default function StepByStep(){
  const timer = React.useRef();
 
  let bgpage = chrome.extension.getBackgroundPage();   
+
+ const [isLogged, setLogged] = React.useState(false);
+ const [quadroResumoIsReady, setQuadro] = React.useState(false);
+ const [paginaDeOferta, setPagina] = React.useState(false);
+
  
  React.useEffect(() => {
   return () => {
@@ -61,6 +66,19 @@ export default function StepByStep(){
     }
   };
 
+  //Verifica a cada instante as condiçoes dos estados:
+  setInterval(function(){
+    //Receber os dados da bgpage.
+
+    //if Usuario ta logado ?
+    //Atualiza o estado ( setLogged(true) )
+      //if Acessou o Quadro resumo ?
+      //Atualiza o estado ( setQuadro(true) )
+        // if Acessou a página de Oferta ?
+        //Atualiza o estado ( setPagina(true) )
+        // Redireciona para a página de legendas
+
+  },2000);
 
     return(<Grid container justify='center'>  
     <Grid container alignItems='stretch' direction='column' justify='center'>
