@@ -1,17 +1,31 @@
-/*chrome.browserAction.onClicked.addListener(function(activeTab){
-    var quadroResumoURL = "https://matriculaweb.unb.br/graduacao/sec/qr.aspx";
-    chrome.tabs.create({ url: quadroResumoURL });
-});
-*/
+var requisitos;
+var quadroResumo;
+var historico;
+var login;
+
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, response){
         if(request["requisitos"] == true){
             response({resposta : "requisitos lidos"});
             //console.log(response)
+            requisitos = true;
         }
         if(request["quadroResumo"] == true){
             response({resposta : "Quadro resumo lido"});
+            quadroResumo = true;
+        }
+        if(request["historico"] == true){        
+            response({resposta : "Historico lido"})
+            historico = true;
+        }
+        if(request["login"] == true){
+            response({estado : "Usuário logado"});
+            login = true;
+        }
+        else if(request["login"] == false){
+            response({estado : "Usuário não está logado"});
+            login = false;
         }
     }
 )
