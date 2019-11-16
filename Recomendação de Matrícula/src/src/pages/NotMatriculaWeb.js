@@ -7,7 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { green } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
 
-import {Link} from 'react-router-dom'; 
+import {Link , Redirect} from 'react-router-dom'; 
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -34,8 +34,11 @@ export default function NotMatriculaWeb(){
   setIsMW(bgpage.isMatriculaWeb);
  },1000);
  //setIsMW(bgpage.isMatriculaWeb);
- console.log(isMW);
+ console.log("This is Matricula Web? : " + isMW);
  
+  if(isMW == true){
+    return <Redirect from='*' to='/StepByStep' />
+  }
   //Caso o usuario não esteja no matricula web
   return(
     
@@ -61,7 +64,6 @@ export default function NotMatriculaWeb(){
             Matrícula Web
           </Button>
         </Grid>
-
       </Grid>
     </Grid>
     

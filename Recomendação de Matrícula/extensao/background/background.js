@@ -3,33 +3,19 @@
     chrome.tabs.create({ url: quadroResumoURL });
 });
 */
-var dados = null
-var lido = false
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, response){
-        if(request["leitura"] == "isScrapped"){
-            response({valor : lido})
+        if(request["requisitos"] == true){
+            response({resposta : "requisitos lidos"});
             //console.log(response)
         }
-        if(request["pedido"] == "ler"){
-            dados = request
-            console.log(dados)
-            lido = true
-            response({text : "lido"})
+        if(request["quadroResumo"] == true){
+            response({resposta : "Quadro resumo lido"});
         }
     }
 )
-/*
-chrome.runtime.onMessage.addListener(
-    function(request, sender, response){
-        if(a == null){
-            a = request
-        }
-        return true
-    }
-)
-*/
+
 window.isMatriculaWeb = false;
 chrome.runtime.onMessage.addListener(receiver);
 

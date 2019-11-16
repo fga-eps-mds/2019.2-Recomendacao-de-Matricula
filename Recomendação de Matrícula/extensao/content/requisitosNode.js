@@ -2,8 +2,9 @@ const request = require('request');
 const cheerio = require('cheerio');
 let materiasCursadas = []
 let materiasNaoCursadas = []
+let contador = 0;
 chrome.storage.local.get(["materias", "status"], function(result){
-    if(result.status != 2){
+    if(result.status != undefined && result.status.quadroResumo && !result.status.requisitos){
         //console.log(result.materias);
         let materias = result.materias;
         for(i = 0; i < result.materias.length; i++){
@@ -63,17 +64,25 @@ chrome.storage.local.get(["materias", "status"], function(result){
                             materias[j].requisitos = vetorFinal;
                         }
                     }
-                    avaliarSePodeSerFeita(materias);
-                    chrome.storage.local.set({
-                        status : 2,
-                        materias : materias
-                    }, function(result){
-                        console.log("Requisitos Salvos");
-                    })
+                    //avaliarSePodeSerFeita(materias);
+                    contador = contador + 1;
+                    if(contador == materiasNaoCursadas.length){
+                        avaliarSePodeSerFeita(materias);
+                        result.status.requisitos = true;
+                        chrome.storage.local.set({
+                            status : result.status,
+                            materias : materias
+                        }, function(result){
+                            console.log("Requisitos Salvos");
+                            chrome.runtime.sendMessage({requisitos : true}, function(response){
+                                console.log(response.resposta);
+                            });
+                        })
+                    }
                 }
             })
         }
-        //console.log(materias)
+        //console.log(materias);
     }
 })
 
