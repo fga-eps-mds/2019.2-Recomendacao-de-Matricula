@@ -96,6 +96,9 @@ chrome.storage.local.get(["materiasHistorico", "semestresCursados", "status"], f
         }, function(result){
             console.log("materias armazenadas", materias.length);
             console.log("semestres:", semestres);
+            chrome.runtime.sendMessage({historico : true}, function(response){
+                console.log(response.resposta);
+            })
         })
     }
  

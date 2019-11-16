@@ -13,6 +13,9 @@ chrome.runtime.onMessage.addListener(
         if(request["quadroResumo"] == true){
             response({resposta : "Quadro resumo lido"});
         }
+        if(request["historico"] == true){
+            response({resposta : "Historico lido"})
+        }
         if(request["login"] == true){
             response({estado : "Usuário logado"});
         }
