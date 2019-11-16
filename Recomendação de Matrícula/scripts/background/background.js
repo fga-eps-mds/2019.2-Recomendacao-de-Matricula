@@ -13,6 +13,12 @@ chrome.runtime.onMessage.addListener(
         if(request["quadroResumo"] == true){
             response({resposta : "Quadro resumo lido"});
         }
+        if(request["login"] == true){
+            response({estado : "Usuário logado"});
+        }
+        else if(request["login"] == false){
+            response({estado : "Usuário não está logado"});
+        }
     }
 )
 
