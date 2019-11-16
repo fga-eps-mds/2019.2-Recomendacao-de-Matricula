@@ -22,6 +22,11 @@
 
 	"content_scripts":[
 		{
+			"matches": ["https://matriculaweb.unb.br/graduacao/*"],
+			"js": ["./content/thirdparty/jquery-3.4.1.min.js","./content/login.js"]
+		},
+
+		{
 			"matches": ["https://matriculaweb.unb.br/graduacao/sec/qr.aspx"],
 			"js": ["./content/thirdparty/jquery-3.4.1.min.js","./content/quadroresumo.js"]
 		},
