@@ -41,5 +41,11 @@ chrome.storage.local.get(["status", "materias", "materiasHistorico"], function(r
                 elt.style['background-color'] = purpleHex;
             }
         }
+
+        if(document.URL.slice(0, 58) == "https://matriculaweb.unb.br/graduacao/oferta_dis.aspx?cod="){
+            chrome.runtime.sendMessage({oferta : true}, function(response){
+                console.log(response.resposta);
+            })
+        }
     }
 })
