@@ -2,7 +2,7 @@ var requisitos;
 var quadroResumo;
 var historico;
 var login;
-
+var oferta;
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, response){
@@ -16,8 +16,12 @@ chrome.runtime.onMessage.addListener(
             quadroResumo = true;
         }
         if(request["historico"] == true){        
-            response({resposta : "Historico lido"})
+            response({resposta : "Historico lido"});
             historico = true;
+        }
+        if(request["oferta"] == true){        
+            response({resposta : "Página de oferta acessada"});
+            oferta = true;
         }
         if(request["login"] == true){
             response({estado : "Usuário logado"});
