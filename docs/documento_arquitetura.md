@@ -1,12 +1,12 @@
 |Data|Versão|Descrição|Autor|
 |----|------|---------|-----|
 |25/09/2019|0.1|Criação do documento base|Matheus Clemente|
-
+|17/11/2019|0.2|Tecnologias, referências e pequenas correções|Matheus Clemente|
 ---
 
 ## Documento de Arquitetura
 
-### 1. Intrudoção
+### 1. Introdução
 
 #### 1.1. Finalidade
 
@@ -18,26 +18,26 @@ Este documento visa esclarecer as decisões arquiteturais tomadas em relação a
 #### 1.2. Escopo
 
 <p>
-Este documento de arquitetura retrata o modelo arquitetural implementado no desenvolvimento do projeto "___", uma extensão para o navegador Google Chrome para recomendação de matérias na plataforma Matrícula Web, com intuito de auxiliar alunos na elaboração de suas grades horárias.
+Este documento de arquitetura retrata o modelo arquitetural implementado no desenvolvimento do projeto "Recomendação de Matrícula", uma extensão para o navegador Google Chrome para recomendação de matérias na plataforma Matrícula Web, com intuito de auxiliar alunos na elaboração de suas grades horárias.
 </p>
 
 
 #### 1.3. Definições, acrônimos e abreviações
 
-//EDITAR COM AS SIGLAS RELEVANTES AO PROJETO
 |Sigla|Significado|
 |----|------|
 |HTML|Hypertext Markup Language (Linguagem de Marcação de Hipertexto)|
-|HTTP|Hypertext Transfer Protocol (Protocolo de Transferência de Hipertexto)|
-|||
+|CSS|Cascading Style Sheets (Folhas de Estilo em Cascata)|
+|API|Application Program Interface (Interface de Programação de Aplicativos)|
+---
 
 
 #### 1.4. Referências
 
-Microsserviços em poucas palavras. ThoughtWorks. Disponível em: (https://goo.gl/AQNy6p). Acesso em: 28 de março de 2018.
+Develop Extensions - Google Chrome. Disponível em: <https://developer.chrome.com/extensions/devguide>. Acesso em: set/2019.
 
 
-#### 2. Visão geral
+#### 1.5. Visão geral
 
 <p>
 O presente documento descreve detalhadamente as características de arquitetura de software escolhidas pela equipe.
@@ -49,6 +49,17 @@ O presente documento descreve detalhadamente as características de arquitetura 
 
 <p>
 O usuário interage primariamente com o site Matrícula Web, que tem sua interface alterada em pontos chave, através da extensão. O programa, por si, comunica-se com a interface HTML do site e apresenta os dados da mesma de forma personalizada ao usuário.
+</p>
+
+#### 2.2 Tecnologias 
+##### 2.2.1 React ()
+<p>
+Biblioteca JavaScript dedicada à criação de interfaces de usuário interativas. 
+</p>
+
+##### 2.2.2 Git (2.20.1)
+<p>
+Ferramenta de controle de versão de arquivos.
 </p>
 
 ### 3. Objetivos e restrições da arquitetura
