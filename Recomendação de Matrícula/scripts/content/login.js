@@ -10,5 +10,6 @@ else{
     //console.log("usuário não logado");
     chrome.runtime.sendMessage({login : false}, function(response){
         console.log(response.estado);
+        chrome.storage.local.clear()
     })
 }
