@@ -12070,9 +12070,8 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
 var assert = require('minimalistic-assert');
 var inherits = require('inherits');
 
-var des = require('../des');
-var utils = des.utils;
-var Cipher = des.Cipher;
+var utils = require('./utils');
+var Cipher = require('./cipher');
 
 function DESState() {
   this.tmp = new Array(2);
@@ -12209,15 +12208,14 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
   utils.rip(l, r, out, off);
 };
 
-},{"../des":64,"inherits":108,"minimalistic-assert":113}],68:[function(require,module,exports){
+},{"./cipher":66,"./utils":69,"inherits":108,"minimalistic-assert":113}],68:[function(require,module,exports){
 'use strict';
 
 var assert = require('minimalistic-assert');
 var inherits = require('inherits');
 
-var des = require('../des');
-var Cipher = des.Cipher;
-var DES = des.DES;
+var Cipher = require('./cipher');
+var DES = require('./des');
 
 function EDEState(type, key) {
   assert.equal(key.length, 24, 'Invalid key length');
@@ -12266,7 +12264,7 @@ EDE.prototype._update = function _update(inp, inOff, out, outOff) {
 EDE.prototype._pad = DES.prototype._pad;
 EDE.prototype._unpad = DES.prototype._unpad;
 
-},{"../des":64,"inherits":108,"minimalistic-assert":113}],69:[function(require,module,exports){
+},{"./cipher":66,"./des":67,"inherits":108,"minimalistic-assert":113}],69:[function(require,module,exports){
 'use strict';
 
 exports.readUInt32BE = function readUInt32BE(bytes, off) {
@@ -16754,7 +16752,7 @@ module.exports={
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.5.1.tgz",
   "_shasum": "c380f5f909bf1b9b4428d028cd18d3b0efd6b52b",
   "_spec": "elliptic@^6.0.0",
-  "_where": "/home/wagnermc506/.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/browserify-sign",
+  "_where": "/home/wagnermc506/.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/browserify-sign",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -42723,8 +42721,8 @@ function _setExports(ndebug) {
 
 module.exports = _setExports(process.env.NODE_NDEBUG);
 
-}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
-},{"../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":139,"assert":16,"stream":177,"util":204}],257:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")},require('_process'))
+},{"../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"_process":139,"assert":16,"stream":177,"util":204}],257:[function(require,module,exports){
 
 /*!
  *  Copyright 2010 LearnBoost <dev@learnboost.com>
@@ -45841,8 +45839,8 @@ exports.update = function(arr, parent) {
 
 // module.exports = $.extend(exports);
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"htmlparser2":343,"parse5":587}],272:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"htmlparser2":343,"parse5":587}],272:[function(require,module,exports){
 /**
  * Module dependencies
  */
@@ -46462,8 +46460,8 @@ CombinedStream.prototype._emitError = function(err) {
   this.emit('error', err);
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"delayed-stream":285,"stream":177,"util":204}],276:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"delayed-stream":285,"stream":177,"util":204}],276:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -46573,8 +46571,8 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109}],277:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109}],277:[function(require,module,exports){
 "use strict";
 
 module.exports = CSSselect;
@@ -53694,8 +53692,8 @@ module.exports = {
 
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./utils":347,"assert-plus":256,"crypto":63,"http":178,"jsprim":356,"sshpk":647,"util":204}],347:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./utils":347,"assert-plus":256,"crypto":63,"http":178,"jsprim":356,"sshpk":647,"util":204}],347:[function(require,module,exports){
 // Copyright 2012 Joyent, Inc.  All rights reserved.
 
 var assert = require('assert-plus');
@@ -98094,8 +98092,8 @@ Key._oldVersionDetect = function (obj) {
 	return ([1, 0]);
 };
 
-}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../../../../.nvm/versions/node/v12.12.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./algs":628,"./dhe":630,"./ed-compat":631,"./errors":632,"./fingerprint":633,"./formats/auto":634,"./formats/dnssec":635,"./formats/pem":637,"./formats/pkcs1":638,"./formats/pkcs8":639,"./formats/putty":640,"./formats/rfc4253":641,"./formats/ssh":643,"./formats/ssh-private":642,"./private-key":649,"./signature":650,"./utils":652,"assert-plus":256,"crypto":63}],649:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../../../../.nvm/versions/node/v12.13.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":109,"./algs":628,"./dhe":630,"./ed-compat":631,"./errors":632,"./fingerprint":633,"./formats/auto":634,"./formats/dnssec":635,"./formats/pem":637,"./formats/pkcs1":638,"./formats/pkcs8":639,"./formats/putty":640,"./formats/rfc4253":641,"./formats/ssh":643,"./formats/ssh-private":642,"./private-key":649,"./signature":650,"./utils":652,"assert-plus":256,"crypto":63}],649:[function(require,module,exports){
 // Copyright 2017 Joyent, Inc.
 
 module.exports = PrivateKey;
@@ -105740,6 +105738,7 @@ let materiasNaoCursadas = []
 let contador = 0;
 chrome.storage.local.get(["materias", "status"], function(result){
     if(result.status != undefined && result.status.quadroResumo && !result.status.requisitos){
+        alert("Favor, não recarregar ou sair da página.\nOs pré-requisitos das matérias serão lidos.");
         //console.log(result.materias);
         let materias = result.materias;
         for(i = 0; i < result.materias.length; i++){
@@ -105811,6 +105810,7 @@ chrome.storage.local.get(["materias", "status"], function(result){
                             console.log("Requisitos Salvos");
                             chrome.runtime.sendMessage({requisitos : true}, function(response){
                                 console.log(response.resposta);
+                                alert("Leitura dos pré-requisitos completa.");
                             });
                         })
                     }

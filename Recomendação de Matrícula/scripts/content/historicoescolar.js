@@ -87,12 +87,12 @@ chrome.storage.local.get(["materiasHistorico", "semestresCursados", "status"], f
             creditos
         });
 
-        result.status.historico = true;
+        //result.status.historico = true;
 
         chrome.storage.local.set({
             materiasHistorico : materias,
             semestresCursados : semestres,
-            status : result.status
+            //status : result.status
         }, function(result){
             console.log("materias armazenadas", materias.length);
             console.log("semestres:", semestres);
