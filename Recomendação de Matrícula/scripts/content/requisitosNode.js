@@ -5,7 +5,7 @@ let materiasNaoCursadas = []
 let contador = 0;
 chrome.storage.local.get(["materias", "status"], function(result){
     if(result.status != undefined && result.status.quadroResumo && !result.status.requisitos){
-        alert("Favor, não recarregar ou sair da página.\nOs pré-requisitos das matérias serão lidos.");
+        alert("Favor, não recarregar ou sair da página.\nOs pré-requisitos das matérias serão lidos.\n Clique em OK, um aviso será exibido quando os pré-requisitos estiverem lidos com sucesso.\n");
         //console.log(result.materias);
         let materias = result.materias;
         for(i = 0; i < result.materias.length; i++){

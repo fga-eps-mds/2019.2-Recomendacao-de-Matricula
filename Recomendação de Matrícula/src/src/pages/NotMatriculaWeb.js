@@ -54,7 +54,8 @@ export default function NotMatriculaWeb(){
        <Grid item>
             <Box textAlign='center'>              
               <h3>
-                Acesse o Matrícula Web, ou Clique no Link para ser Redirecionado.
+                Acesse o Matrícula Web para que a extensão funcione.
+                Se já estiver no Matrícula Web, clique no botão abaixo
               </h3>
            </Box>  
         </Grid>
