@@ -4,6 +4,10 @@ let greenHex = "#ceffca" //Cor de destaque de materias ja cursadas
 let yellowHex = "#ffff00" //Cor de destaque de materias nao cursadas
 let redHex = "#ff4000" //Cor de destaque para materias em risco de desligamento
 
+//
+// ATENÇÃO!! Essas cores acima também estão referenciadas na página de legendas do front-end
+// 
+
 chrome.storage.local.get(["status", "materias", "materiasHistorico"], function(result){
     if (result.status) {
         let materiasCursadas = []; //Materias já cursadas as quais o aluno já está aprovado ou fazendo

@@ -32,7 +32,7 @@ export default function NotMatriculaWeb(){
   //Função que checa constantemente, quando este componente estiver sendo exibido, se o usuário está no MW
   setInterval(function(){
     setIsMW(bgpage.isMatriculaWeb);
-  },1000);
+  },300);
   console.log("This is Matricula Web? : " + isMW);
  
   //Caso o usuário já esteja no Matricula Web

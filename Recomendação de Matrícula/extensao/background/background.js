@@ -30,6 +30,10 @@ chrome.runtime.onMessage.addListener(
         else if(request["login"] == false){
             response({estado : "Usuário não está logado"});
             login = false;
+            requisitos = false;
+            quadroResumo = false;
+            historico = false;
+            oferta = false;
         }
     }
 )
