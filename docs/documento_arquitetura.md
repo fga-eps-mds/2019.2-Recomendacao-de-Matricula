@@ -2,6 +2,7 @@
 |----|------|---------|-----|
 |25/09/2019|0.1|Criação do documento base|Matheus Clemente|
 |17/11/2019|0.2|Tecnologias, referências e pequenas correções|Matheus Clemente|
+|21/11/2019|0.3|Adição do tópico 4 (caso de uso) e respectivo diagrama|Matheus Clemente|
 ---
 
 ## Documento de Arquitetura
@@ -52,7 +53,7 @@ O usuário interage primariamente com o site Matrícula Web, que tem sua interfa
 </p>
 
 #### 2.2 Tecnologias 
-##### 2.2.1 React ()
+##### 2.2.1 React (16.12.0)
 <p>
 Biblioteca JavaScript dedicada à criação de interfaces de usuário interativas. 
 </p>
@@ -70,3 +71,7 @@ A seguir, estao listadas objetivos e restriçÕes do sistema relevantes à arqui
 - A aplicação, por se tratar de uma extensão para navegador, necessita obrigatoriamente que o usuário utilize o referido navegador (Google Chrome Versão 77.0.3865.90).
 - Funciona exclusivamente no site Matrícula Web, além de depender dos dados providos por ele.
  </p>
+
+ ### 4. Visão de casos de uso
+ #### 4.1 Diagrama de caso de uso
+![Diagrama de caso de uso](https://i.imgur.com/497Hh6k.png)
