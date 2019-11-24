@@ -3,6 +3,7 @@
 |25/09/2019|0.1|Criação do documento base|Matheus Clemente|
 |17/11/2019|0.2|Tecnologias, referências e pequenas correções|Matheus Clemente|
 |21/11/2019|0.3|Adição do tópico 4 (caso de uso) e respectivo diagrama|Matheus Clemente|
+|24/11/2019|1.0|Especificações de caso de uso|Matheus Clemente|
 ---
 
 ## Documento de Arquitetura
@@ -30,7 +31,7 @@ Este documento de arquitetura retrata o modelo arquitetural implementado no dese
 |HTML|Hypertext Markup Language (Linguagem de Marcação de Hipertexto)|
 |CSS|Cascading Style Sheets (Folhas de Estilo em Cascata)|
 |API|Application Program Interface (Interface de Programação de Aplicativos)|
----
+|||
 
 
 #### 1.4. Referências
@@ -75,3 +76,13 @@ A seguir, estao listadas objetivos e restriçÕes do sistema relevantes à arqui
  ### 4. Visão de casos de uso
  #### 4.1 Diagrama de caso de uso
 ![Diagrama de caso de uso](https://i.imgur.com/497Hh6k.png)
+
+ #### 4.2 Especificações dos casos de uso
+
+ |Casos de Uso|Ator|Descrição|
+ |---|---|---|
+ |UC01 - Acessa MatriculaWeb|Estudante|Usuário entra com seu login e senha na sua conta do MatriculaWeb. Passo necessário para acessar quaisquer dados|
+ |UC02 - Acessa Quadro Resumo|Estudante|Usuário abre a página do quadro resumo para que a extensão acesse dados do fluxo do curso do aluno|
+ |UC03 - Acessa Histórico Escolar|Estudante|Usuário acessa a página do histórico escolar para que a extensão acesse o histórico de matérias cursadas, e número de reprovações|
+ 
+
