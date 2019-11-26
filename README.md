@@ -59,8 +59,8 @@ A UNB tem o [Matrícula Web] como plataforma de matrículas, logo a extensão te
 <h5>Disponíveis e úteis para o usuário, podemos citar:</h5>
 
 + Highlight de matrículas disponíveis para matrícula na página de oferta de disciplinas
-+ Geração de grades horárias com mátérias (Em progresso)
+    + O destaque é relativo às matérias já cursadas pelo usuário, as matérias que o usuário pode cursar, as matérias que ele não pode cursar e as matérias em que o usuário está notificado como em condição de desligamento
 
 <h5>Internas, com o objetivo de integrá-las para que as funcionalidades para o usuário existam</h5>
 
-+ In a nutshell, a extensão verifica se o usuário está logado no Matrícula Web, recolhe dados do usuário (como disciplinas já concluídas) na página de quadro resumo por meio de um Crawler, verifica situação de pré-requisitos e co-requisitos das matérias para poder classificá-las, organiza os dados e integra as funcionalidades usando o ReactJS para o usuário poder ter uma rápida identificação do interesse dele.
++ In a nutshell, a extensão verifica se o usuário está logado no Matrícula Web, recolhe dados do usuário (como disciplinas já concluídas) na página de quadro resumo por meio de um Crawler, verifica situação de pré-requisitos e co-requisitos das matérias para poder classificá-las, recolhe dados sobre condição de desligamento da faculdade na página do histórico escolar, organiza os dados e integra as funcionalidades usando o ReactJS para o usuário poder ter uma rápida identificação do interesse dele.
