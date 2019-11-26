@@ -1,10 +1,13 @@
 {
 	"name":"Recomendação de Matrícula",
 	"version":"1.0",
-	"description":"Recomenda disciplinas ao aluno regularmente matrículado na Universidade de Brasília - GAMA (FGA)",
-	"manifest_version": 2,
+	"description":"Recomenda disciplinas ao aluno regularmente matrículado na Universidade de Brasília",
+	"manifest_version": 3,
 	"icons": {
-	"128": "./icons/logo128.png"
+		"128": "./icons/128.png",
+		"48": "./icons/48.png",
+		"32": "./icons/32.png",
+		"16": "./icons/16.png"
 	},
 	
 	"permissions": [
