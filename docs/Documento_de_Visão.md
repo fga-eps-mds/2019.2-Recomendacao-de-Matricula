@@ -1,6 +1,4 @@
-# Recomendação de Matrícula
-### Visão
-#### Versão 1.1
+#### Versão 1.2
 
 ## Histórico de Revisão
 
@@ -8,7 +6,7 @@
 | ---- | ------ | --------- | ----- |
 |27/09/2019| 1.0 | Criação do documento. | Lucas Cortes
 |26/11/2019| 1.1 | Atualização do escopo. | Wagner Martins
-
+|27/11/2019| 1.2 | Atualização do posicionamento. | Thiago Luiz
 ## Sumário
  [1. Introdução](#_1-introdução) <br>
 &emsp; [1.1 Objetivo](#_11-objetivo) <br>
@@ -51,7 +49,7 @@ Esse documento tem o propósito de determinar as características gerais do dese
 
 ### 1.2 Escopo
 
-A extensão Recomendação de Matrícula irá atuar juntamente com o site do matrícula web, analisando os dados dos alunos, será capaz de destacar as matérias do curso de alunos regularmente matrículados em um curso da UnB Gama - FGA.
+A extensão Recomendação de Matrícula irá atuar juntamente com o site do matrícula web, analisando os dados dos alunos, será capaz de destacar as matérias do curso de alunos regularmente matrículados em um curso da UnB.
 
 Os destaques serão implementados de acordo com as principais matérias presentes no curso do aluno, portanto a extensão possuirá as seguintes funcionalidades:
 
@@ -79,17 +77,17 @@ Esse documento detalha o planejamento e a construção da extensão Recomendaç�
 
 ## 2. Posicionamento
 ### 2.1 Oportunidade de Negócios
-Em geral, os alunos da FGA gastam horas para montar uma grade horária que se adeque aos seus horários e necessidades. A extensão Recomendação de Matrícula visa auxiliar na procura das matérias, auxiliando o aluno para que ele possua uma melhor experiência com a plataforma do Matricula Web.
+Em geral os alunos da Universidade de Brasília se perdem no período de matrícula nas disciplinas, pois muitas vezes não conseguem ver de forma fácil quais são as matérias que precisam ser feitas, que podem ser feitas e aquelas com o risco de desligamento. Encontram também dificuldade quando querem trocar de curso e não conseguem ver as matérias em comum que já estão feitas.
 
 ### 2.2 Declaração do Problema
 | O problema | afeta | cujo impacto é | uma boa solução seria | 
 | ------------- | ----- | -------------- | --------------------- | 
-| Dificuldade em montar uma grade horária compatível com as adversidades internas e externas vida acadêmica | Alunos da FGA | Grades horárias com janelas de horários e/ou atrasos na graduação | Automatizar a montagem das grades horárias para que sejam compatíveis as necessidades dos alunos sem que gerem problemas futuros. |
+| Dificuldade em acompanhar o posicionamento do curso | Alunos da UNB | Atraso no fluxo do curso | Destacar as matérias do fluxo nas páginas mais acessadas do Matrícula Web |
 
 ### 2.3 Declaração da Posição do Produto
 | Público Alvo | Que | Recomendação de Matrícula | Que | | Nosso produto | 
 | ---- | --- | ------ | --- | ------------ | ------------- |
-| Estudantes da FGA | Possuem dificuldades em encontrar as matérias do curso no período de matrícula | É uma extensão do navegador web Google Chrome | Destaca as matérias do curso de acordo com o histórico do aluno | |  | 
+| Estudantes da UNB | Possuem dificuldades em encontrar as matérias do curso no período de matrícula | É uma extensão do navegador web Google Chrome | Destaca as matérias do curso de acordo com o histórico do aluno | |  | 
 
 ## 3. Descrições da Parte Interessada e do Usuário
 ### 3.1 Resumo da parte interessada
@@ -102,7 +100,7 @@ Em geral, os alunos da FGA gastam horas para montar uma grade horária que se ad
 ### 3.2 Resumo do Usuário
 | Nome | Descrição | Responsabilidades |
 |----- | --------- | ----------------- |
-| Alunos da FGA | Alunos que desejam encontrar as matérias de seu curso em menor tempo. | Interagir com a extensão e se matricular, no site do matrícula web, nas matérias recomendadas. |
+| Alunos da UNB | Alunos que desejam encontrar as matérias de seu curso em menor tempo. | Interagir com a extensão e se matricular, no site do matrícula web, nas matérias recomendadas. |
 
 ### 3.3 Ambiente do Usuário
 Para ter acesso a extensão o usuário terá que utilizar, necessariamente, o navegador de internet Google Chrome, ter acesso a internet, ser aluno regularmente matrículado na UnB Gama e estar logado no site matrícula web.
@@ -126,7 +124,7 @@ Para ter acesso a extensão o usuário terá que utilizar, necessariamente, o na
 ### 3.5 Perfis de Usuário
 | Representantes | Descrição | Tipo | Responsabilidade | Critério de sucesso | Envolvimento |
 | -------------- | --------- | ---- | ---------------- | ------------------- | ------------ |
-| Alunos da FGA | Alunos que desejam poupar tempo no momento da matrícula. | Usuário | Matricular nas matérias recomendadas | Obter um destaque das principais matérias do curso nas páginas de oferta, currículo e fluxo. | Alto |
+| Alunos da UNB | Alunos que desejam poupar tempo no momento da matrícula. | Usuário | Matricular nas matérias recomendadas | Obter um destaque das principais matérias do curso nas páginas de oferta, currículo e fluxo. | Alto |
 
 ### 3.6 Necessidades Principais do Investidor ou Usuário
 | Necessidade | Prioridade | Interesse | Solução Atual | Solução Proposta |
