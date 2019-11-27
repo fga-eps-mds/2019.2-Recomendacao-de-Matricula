@@ -1,13 +1,12 @@
-# Recomendação de Matrícula
-### Visão
-#### Versão 1.0
+#### Versão 1.2
 
 ## Histórico de Revisão
 
 | Data | Versão | Descrição | Autor |
 | ---- | ------ | --------- | ----- |
 |27/09/2019| 1.0 | Criação do documento. | Lucas Cortes
-
+|26/11/2019| 1.1 | Atualização do escopo. | Wagner Martins
+|27/11/2019| 1.2 | Atualização do posicionamento. | Thiago Luiz
 ## Sumário
  [1. Introdução](#_1-introdução) <br>
 &emsp; [1.1 Objetivo](#_11-objetivo) <br>
@@ -50,19 +49,15 @@ Esse documento tem o propósito de determinar as características gerais do dese
 
 ### 1.2 Escopo
 
-A extensão Recomendação de Matrícula irá atuar juntamente com o site do matrícula web, analisando os dados dos alunos, será capaz de montar grades horárias para alunos regularmente matrículados em um curso da UnB Gama - FGA.
+A extensão Recomendação de Matrícula irá atuar juntamente com o site do matrícula web, analisando os dados dos alunos, será capaz de destacar as matérias do curso de alunos regularmente matrículados em um curso da UnB.
 
-As grades horárias serão montadas de acordo com a necessidade do aluno, portanto a extensão possuirá as seguintes funcionalidades:
+Os destaques serão implementados de acordo com as principais matérias presentes no curso do aluno, portanto a extensão possuirá as seguintes funcionalidades:
 
-* A extensão irá montar a grade horária por período e dias da semana, de acordo com que o usuário desejar.
+* A extensão terá a funcionalidade de destacar na página da oferta, currículo e fluxo, as matérias específicas de acordo com a opção de curso do usuário.
 
-* A grade horária poderá ser montada de acordo com o número desejado de créditos semestrais.
+* A extenção destacará as matérias de acordo com o histórico do aluno, desta forma, a mostrar as matérias já aprovadas, com pré-requisitos atendidos, e disciplinas que ainda não podem ser cursadas.
 
-* A extensão terá a funcionalidade de destacar na página da oferta as matérias específicas de acordo com a opção de curso do usuário.
-
-* Montar um fluxograma com as matérias necessárias para o término do curso.
-
-* A extensão irá notificar o aluno caso possua algum tipo de risco de desligamento.
+* A extensão destacará disciplinas que tenham algum tipo de risco de desligamento.
 
 ### 1.3 Definições, Acrônimos e Abreviações
 | Abreviação | Definição |
@@ -82,17 +77,17 @@ Esse documento detalha o planejamento e a construção da extensão Recomendaç�
 
 ## 2. Posicionamento
 ### 2.1 Oportunidade de Negócios
-Em geral, os alunos da FGA gastam horas para montar uma grade horária que se adeque aos seus horários e necessidades. A extensão Recomendação de Matrícula visa automatizar esse processo, montando grades horárias de acordo com que o usuário desejar, auxiliando o aluno para que ele possua uma melhor experiência na universidade, concluir a graduação em tempo hábil e sem riscos de desligamento.
+Em geral os alunos da Universidade de Brasília se perdem no período de matrícula nas disciplinas, pois muitas vezes não conseguem ver de forma fácil quais são as matérias que precisam ser feitas, que podem ser feitas e aquelas com o risco de desligamento. Encontram também dificuldade quando querem trocar de curso e não conseguem ver as matérias em comum que já estão feitas.
 
 ### 2.2 Declaração do Problema
 | O problema | afeta | cujo impacto é | uma boa solução seria | 
 | ------------- | ----- | -------------- | --------------------- | 
-| Dificuldade em montar uma grade horária compatível com as adversidades internas e externas vida acadêmica | Alunos da FGA | Grades horárias com janelas de horários e/ou atrasos na graduação | Automatizar a montagem das grades horárias para que sejam compatíveis as necessidades dos alunos sem que gerem problemas futuros. |
+| Dificuldade em acompanhar o posicionamento do curso | Alunos da UNB | Atraso no fluxo do curso | Destacar as matérias do fluxo nas páginas mais acessadas do Matrícula Web |
 
 ### 2.3 Declaração da Posição do Produto
 | Público Alvo | Que | Recomendação de Matrícula | Que | | Nosso produto | 
 | ---- | --- | ------ | --- | ------------ | ------------- |
-| Estudantes da FGA | Possuem dificuldades e/ou desejam automatizar a montagem de grades horárias | É uma extensão do navegador web Google Chrome | Automotiza a montagem de grades horárias de acordo com a necessidade do aluno | |  | 
+| Estudantes da UNB | Possuem dificuldades em encontrar as matérias do curso no período de matrícula | É uma extensão do navegador web Google Chrome | Destaca as matérias do curso de acordo com o histórico do aluno | |  | 
 
 ## 3. Descrições da Parte Interessada e do Usuário
 ### 3.1 Resumo da parte interessada
@@ -105,7 +100,7 @@ Em geral, os alunos da FGA gastam horas para montar uma grade horária que se ad
 ### 3.2 Resumo do Usuário
 | Nome | Descrição | Responsabilidades |
 |----- | --------- | ----------------- |
-| Alunos da FGA | Alunos que desejam poupar tempo e automatizar a criação de grades horárias. | Interagir com a extensão e se matricular, no site do matrícula web, nas matérias recomendadas. |
+| Alunos da UNB | Alunos que desejam encontrar as matérias de seu curso em menor tempo. | Interagir com a extensão e se matricular, no site do matrícula web, nas matérias recomendadas. |
 
 ### 3.3 Ambiente do Usuário
 Para ter acesso a extensão o usuário terá que utilizar, necessariamente, o navegador de internet Google Chrome, ter acesso a internet, ser aluno regularmente matrículado na UnB Gama e estar logado no site matrícula web.
@@ -129,36 +124,32 @@ Para ter acesso a extensão o usuário terá que utilizar, necessariamente, o na
 ### 3.5 Perfis de Usuário
 | Representantes | Descrição | Tipo | Responsabilidade | Critério de sucesso | Envolvimento |
 | -------------- | --------- | ---- | ---------------- | ------------------- | ------------ |
-| Alunos da FGA | Alunos que desejam poupar tempo e automatizar a criação de grades horárias. | Usuário | Matricular nas matérias recomendadas | Obter as recomendações em formato de grade horária de acordo com sua necessidade. | Alto |
+| Alunos da UNB | Alunos que desejam poupar tempo no momento da matrícula. | Usuário | Matricular nas matérias recomendadas | Obter um destaque das principais matérias do curso nas páginas de oferta, currículo e fluxo. | Alto |
 
 ### 3.6 Necessidades Principais do Investidor ou Usuário
 | Necessidade | Prioridade | Interesse | Solução Atual | Solução Proposta |
 | ----------- | ---------- | --------- | ------------- | ---------------- |
-| Receber as recomendações de matrícula por período e dias da semana | Alta | Automatizar o processo | Montar manualmente | Receber a grade horária montada através da extensão Recomendação de Matrícula |
-| Montar a grade horária de acordo com o número de créditos desejados. | Alta | Automatizar o processo | Montar manualmente | Receber a grade horária montada através da extensão Recomendação de Matrícula |
-| Receber um fluxograma com o planejamento do restante da graduação | Alta | Possuir um planejamento do curso e estimativa de conclusão | Verificar, individualmente, as matérias restantes no quadro resumo | Receber a grade horária montada através da extensão Recomendação de Matrícula |
-| Receber uma notificação caso haja algum risco de desligamento | Alta | Ser informado antes de entrar em condição e/ou risco de desligamento | Recebe a informação no site somente quando entra em condição | Receber a notificação de risco de desligamente antecipadamente para poder evitá-la |
-| Filtragem das matérias na página de oferta | Alta | Facilitar a busca de matérias específicas da opção de curso | Identificar manualmente | Destacar as matérias na página de oferta de acordo com a opção de curso do aluno, diferenciando as matérias restantes das já concluídas |
+| Filtragem das matérias na página de oferta, currículo e fluxo | Alta | Facilitar a busca de matérias específicas da opção de curso | Identificar manualmente | Destacar as matérias na página de oferta de acordo com a opção de curso do aluno, diferenciando as matérias restantes das já concluídas |
+| Filtragem das matérias visando os pré-requisitos | Alta | Facilitar a busca de matérias que já podem ser cursadas dentro do fluxo | Busca manual | Destacar as matérias que ainda não foram cursadas de acordo com a possibilidade atual de cursar a disciplina através dos pré-requisitos |
+| Filtragem das matérias visando as condições de desligamento | Alta | Ser informado antes de entrar em condição e/ou risco de desligamento | Recebe a informação no site somente quando entra em condição | Exibir no destaque as matérias que apresentarem riscos |
+
 ## 4. Visão Geral do Produto
 ### 4.1 Perspectiva do Produto
-A Recomendação de Matrícula será uma extensão do navegador Google Chrome em que o usuário poderá, com alguns cliques, gerar grades horárias planejadas de acordo com a sua necessidade do momento. A extensão será capaz de montar e mostrar a grade horária para o usuário, restando a ele somente se matrícular nas matérias recomendadas.
+A Recomendação de Matrícula será uma extensão do navegador Google Chrome em que o usuário poderá, com alguns cliques, visualizar as principais matérias de seu curso destacadas.
 
 ### 4.2. Resumo de Recursos
 | Benefício para o cliente | Recursos de suporte |
 |------------------------- | ------------------- |
-| Reduzir o tempo gasto com planejamento e montagem das grades horárias | Lendo o histórico do aluno e a oferta das matérias, a extensão será capaz de montar as grades horárias e gerar um fluxograma com as matérias restantes para conclusão da graduação. |
-| Filtragem das matérias na página de oferta | Serão destacadas na página da oferta as matérias referentes a opção de curso do aluno, distinguindo as matérias concluídas e não concluídas. |
-| Reduzir o risco de desligamento | Montar as grades horárias visando evitar qualquer tipo de riso de desligamento, notificando o usuário caso sua grade o deixe em condição |
+| Reduzir o tempo gasto procurando matérias do curso no site do Matrícula Web | Lendo o quadro resumo, e o histórico do aluno, a extensão destacará as disciplinas principais de seu curso. |
+| Filtragem das matérias na página de oferta | Serão destacadas na página da oferta as matérias referentes a opção de curso do aluno, distinguindo as matérias concluídas e não concluídas, e identificando se elas podem ou não ser cursadas. |
+| Reduzir o risco de desligamento | Destacar as matérias que apresentarem as condições para o risco de desligamento. |
 
 ## 5. Recursos do Produto
 ### 5.1 Extensão de fácil uso e instalação.
-### 5.2 Permitir ao usuário escolher qual critério de montagem de sua grade horária, tais como:
-* Período e dias da semana;
-* Número de créditos por semestre;
-
-### 5.3 Notificar o usuário caso haja algum riso de desligamento.
-### 5.4 Destacar na página de oferta as matérias específicas de seu curso.
-### 5.5 Montar um fluxograma com o planejamento do restante do curso.
+### 5.2 Auxiliar o usuário na visualização das matérias de seu curso, nas páginas de oferta, fluxo e currículo, visando:
+* Se a matéria já foi cursada;
+* Se a matéria não foi cursada, e se ela pode ser cursada;
+* Se a matéria apresenta riscos de desligamento;
 
 ## 6. Restrições do Produto
 ### 6.1 Restrições de implementação
@@ -171,7 +162,7 @@ A pouca experiência com as tecnologias da implementação e com as tecnicas de 
 O sistema terá uma cobertura de testes.
 
 ## 7. Faixas de Qualidade
-A interação com usuário será rápida, de forma que o usuário apenas logue no site do matrícula web e abra a extensão, escolhendo em alguns passos como sua grade horária será montada.
+A interação com usuário será rápida, de forma que o usuário apenas logue no site do matrícula web e siga alguns passos para que o destaque esteja disponível.
 
 Pelo motivo do site do matrícula web não possuir uma API, os dados serão obtidos com Web crawler, logo, todo funcionamento da extensão depende da estabilidade do site.
 
