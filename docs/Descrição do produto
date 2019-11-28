@@ -1,0 +1,34 @@
+O produto Recomendação de Matérias UnB 
+
+Sobre o produto 
+
+Introdução
+  
+   Recomendação de matérias UnB tem como objetivos auxiliar o estudante no processo de matricula em disciplina.
+ 
+ O Problema 
+   Para se adequar ao processo de matricula na UnB o aluno tem que inicialmente  saber quais matérias fazem parte do seu fluxo ( obrigatórias ou optativas ) , ou  fora de opção e também o numero de créditos obrigatórios por ano  para não correr o risco de ser desligado da universidade. Consciente destas informações o aluno escolhe as matérias dando prioridade as matérias que são pré-requisitos para não travar o seu curso tendo ainda que ter a preocupação de  não ser reprovado trés vezes numa mesma matéria obrigatória , sendo que quando necessário pode contar com ajuda do seu orientador.  
+
+Objetivo 
+
+    O sistema de Recomendação de Matricula Unb visa auxiliar o estudante a se matricular em disciplinas pois utilizando cores   dá ao aluno uma visão mais rápida das matérias obrigatórias ou optativas a serem cursadas agilizando assim o processo . Através  disso o aluno pode identificar as matérias já cursadas as disponíveis para o semestre e as matérias que ele está em condição ,se houver  ,e pode tomar decisão acertada com relação as matérias a serem feitas.    
+
+Principais Funcionalidades 
+       As matérias se apresentam nas cores verde, amarelo , roxo e vermelho cada cor está relacionada a uma condição de matéria a ser considerada pelo aluno ao fazer a matricula: 
+
+         Verde -disciplinas  já cursadas 
+         Amarelo- disciplinas  que ele pode cursar 
+         Roxo – disciplinas  que o aluno não pode cursar pois não possui os pre-requisitos naquele momento . 
+         Vermelha , disciplinas que podem ocasionar o desligamento.
+          
+Plataforma 
+   O sistema de Recomendação da UnB foi  feito para rodar no navegador Google Chorome , a partir do Framework React js e do Node js e no seu processo de construção  faz uso de programação  Python. 
+Licenciamento 
+   Licença GPL
+Restrições 
+O usuário deverá observar as instruções abaixo para  fazer uso da extensão 
+·  deverá ter o   Google Chorome como único navegador . 
+· deve estar online 
+· só pode ter acesso se estiver  logado no site do matricula web. 
+·  Sem    passar  pela  lista de oferta de matérias e pela página que mostra o quadro resumo do aluno a extensão não funciona adequadamente. 
+
