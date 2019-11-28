@@ -17,11 +17,24 @@
 
 
 <h2> Execução: </h2>
+
+<h3>Instalando a extensão pela Web Store</h3>
+<p>Uma forma mais prática e acessível de um usuário comum instalar a extensão no seu navegador chrome.
+
++ É necessário ter uma conta do google [Guia para criar uma conta do Google](https://support.google.com/accounts/answer/27441?hl=pt-BR)
++ Entrar com essa conta na [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
++ Ir na [Recomendação de Matrícula](https://chrome.google.com/webstore/search/Recomenda%C3%A7%C3%A3o%20de%20Matricula) e clicar em "Usar no Chrome".
++ Pronto, a extensão foi adicionada ao chrome
+</p>
+
+<h5>ou</h5>
+<h3> Em modo de desenvolvedor</h3>
+
 <p>
 Para executar a extensão é necessário que se execute o  que gera os arquivos da extensão pelomenos uma vez (ou a cada alteração no código para os arquivos serem atualizados). Uma vez executado esse  basta ativar o Modo de Desenvolvedor no Google Chrome e adicionar a extensão descompactada ao navegador (a cada alteração na extensão, ela deverá ser atualizada manualmente no navegador).
 </p>
 
-<h3>Executando o  que gera os arquivos:</h3>
+<h3>Executando o script que gera os arquivos:</h3>
 
 + Na pasta "/Recomendação de Matrícula" se encontra o arquivo "build.py"
 + Execute-o usando o comando
@@ -50,14 +63,6 @@ Para executar a extensão é necessário que se execute o  que gera os arquivos 
 + Uma vez que a extensão foi adicionada no Chrome, ela não precisa ser adicionada novamente
 + Depois que executado o script de compilar a extensão, basta clicar no ícone de seta circular localizado no card da extensão na própria página "chrome://extensions"
 
-<h2>Instalando a extensão pela Web Store</h2>
-<p>Uma forma mais prática e acessível de um usuário comum instalar a extensão no seu navegador chrome.
-
-+ É necessário ter uma conta do google [Guia para criar uma conta do Google](https://support.google.com/accounts/answer/27441?hl=pt-BR)
-+ Entrar com essa conta na [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
-+ Ir na [Recomendação de Matrícula](https://chrome.google.com/webstore/search/Recomenda%C3%A7%C3%A3o%20de%20Matricula) e clicar em "Usar no Chrome".
-+ Pronto, a extensão foi adicionada ao chrome
-</p>
 <h2>Sobre funcionalidade:</h2>
 
 <p>A extensão para Google Chrome tem como objetivo facilitar a escolha de disciplinas para os alunos matrículados na Universidade de Brasília (UNB).
