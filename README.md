@@ -66,7 +66,7 @@ A UNB tem o [Matrícula Web] como plataforma de matrículas, logo a extensão te
 
 + In a nutshell, a extensão verifica se o usuário está logado no Matrícula Web, recolhe dados do usuário (como disciplinas já concluídas) na página de quadro resumo por meio de um Crawler, verifica situação de pré-requisitos e co-requisitos das matérias para poder classificá-las, recolhe dados sobre condição de desligamento da faculdade na página do histórico escolar, organiza os dados e integra as funcionalidades usando o ReactJS para o usuário poder ter uma rápida identificação do interesse dele.
 
-##Para contribuir:
+## Para contribuir:
 
 + Use o GitHub para fazer um fork do repositório principal.
 
