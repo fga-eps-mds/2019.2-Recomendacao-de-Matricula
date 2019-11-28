@@ -52,7 +52,7 @@ Para executar a extensão é necessário que se execute o  que gera os arquivos 
 <p>Uma forma mais prática e acessível de um usuário comum instalar a extensão no seu navegador chrome.
 
 + É necessário ter uma conta do google [Guia para criar uma conta do Google](https://support.google.com/accounts/answer/27441?hl=pt-BR)
-+ Entrar com essa conta na Chrome Web Store [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
++ Entrar com essa conta na [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
 + Ir na [Recomendação de Matrícula](https://chrome.google.com/webstore/search/Recomenda%C3%A7%C3%A3o%20de%20Matricula) e clicar em "Usar no Chrome".
 + Pronto, a extensão foi adicionada ao chrome
 </p>
